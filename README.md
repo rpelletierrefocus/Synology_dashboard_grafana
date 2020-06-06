@@ -1,4 +1,4 @@
-# Synology_dashboard_grafana
+# Synology_dashboard_grafana (Dockerized)
 A grafana dashboard for monitoring Synology NAS
 
 Dependencies
@@ -6,13 +6,12 @@ InfluxDB as the time-series database
 Telegraf as the collector
 
 Quick Start
-- Enable SNMP on your Synology NAS
-- Merge input_syno_telegraf.conf with your local Telegraf instance configuration (or create a new instance)
-- Edit the SNMP 'public' string as appropriate
-- Edit the 'agents' list to include all of your monitored NAS
-- If you do not already have an InfluxDB output configured in your Telegraf instance:
-- Merge the included output_influxdb_telegraf.conf  with your local Telegraf instance configuration:
-- Edit the URL to your new InfluxDB instance
-- Edit the username and password for this InfluxDB instance as appropriate
-- Restart Telegraf
+- git clone this repo
+- cd Synology_dashboard_grafana
+- nano etc/telegraf/telegraf.conf
+- Add your influxdb address, targets, and community string
+- Run 
+    docker-compose up -d
+- Look at the logs for errors
+    docker logs -f telegraf
 
