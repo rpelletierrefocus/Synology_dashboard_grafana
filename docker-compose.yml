@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  telegraf:
+    image: telegraf:latest
+    container_name: telegraf
+    ports:
+      - "6514:6514"
+    volumes:
+      - ./etc/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+      - ./mibs:/usr/share/snmp/mibs
+
