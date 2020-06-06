@@ -11,7 +11,7 @@ Quick Start
 - nano etc/telegraf/telegraf.conf
 - Add your influxdb address, targets, and community string
 - Run 
-    docker-compose up -d
+    ```docker-compose up -d```
 - Look at the logs for errors
-    docker logs -f telegraf
+    ```docker logs -f telegraf```
 
